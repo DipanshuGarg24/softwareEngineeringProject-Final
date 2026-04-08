@@ -203,9 +203,21 @@ async function api(path,opts={}){
 <div id="sec-cab" class="section">
     <div class="flex justify-between items-center mb-5">
         <h1 class="text-xl font-bold">Cab Sharing</h1>
-        <button onclick="openModal('cab')" class="bg-yellow-500 text-white px-3 py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-yellow-600"><i class="fa-solid fa-plus mr-1"></i>Create Pool</button>
+        <div class="flex gap-2">
+            <button onclick="nav('cab-my',null)" class="bg-gray-100 text-gray-700 px-3 py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-gray-200"><i class="fa-solid fa-car mr-1"></i>My Rides</button>
+            <button onclick="openModal('cab')" class="bg-yellow-500 text-white px-3 py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-yellow-600"><i class="fa-solid fa-plus mr-1"></i>Create Pool</button>
+        </div>
     </div>
     <div id="cabList" class="space-y-3"></div>
+</div>
+
+<!-- CAB MY RIDES -->
+<div id="sec-cab-my" class="section">
+    <div class="flex items-center gap-3 mb-5">
+        <button onclick="nav('cab',null)" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1 class="text-xl font-bold">My Rides</h1>
+    </div>
+    <div id="myCabList"></div>
 </div>
 
 <!-- ══════ MESS MENU ══════ -->
@@ -296,6 +308,7 @@ function enterApp(){
     document.getElementById('sidebarMeta').textContent=`${ME.year} ${ME.department} • ${ME.hostel}`;
     document.getElementById('headerKarma').textContent=(ME.karma||0).toLocaleString()+' XP';
     document.getElementById('welcomeMsg').textContent=`Welcome back, ${ME.name.split(' ')[0]} 👋`;
+    const loaders={dashboard:loadDashboard,runner:loadRunner,'runner-my':()=>loadMyRunner('posted'),market:loadMarket,'market-my':loadMyListings,cab:loadCab,'cab-my':loadMyCab,mess:loadMess,chat:loadChatLobby,events:loadEvents,karma:loadKarmaStore,profile:loadProfile};
     loadDashboard();
 }
 
