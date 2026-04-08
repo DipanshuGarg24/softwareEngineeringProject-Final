@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hostel Hub</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styling */
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #004080;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Grid for Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Card Styling */
+        .card {
+            border: 1px solid #e1e4e8;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafbfc;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        /* Event Specific Styles */
+        .event-date {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Campus Hostel Hub</h1>
+        <p>Your central dashboard for hostel life, mess updates, and campus events.</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="hostel-details">
+            <h2>Hostel Overview</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Hostel 12</h3>
+                    <p><strong>Capacity:</strong> 500 Students</p>
+                    <p><strong>Facilities:</strong> High-speed LAN, Common Room, TV Room, Night Canteen.</p>
+                    <p><strong>Warden:</strong> Prof. A. Sharma</p>
+                </div>
+                <div class="card">
+                    <h3>Hostel 13</h3>
+                    <p><strong>Capacity:</strong> 450 Students</p>
+                    <p><strong>Facilities:</strong> Indoor Sports Room, Music Room, Reading Room.</p>
+                    <p><strong>Warden:</strong> Prof. R. Gupta</p>
+                </div>
+                <div class="card">
+                    <h3>Current Mess Menu</h3>
+                    <p><strong>Breakfast:</strong> Poha, Jalebi, Milk/Tea</p>
+                    <p><strong>Lunch:</strong> Rajma Chawal, Roti, Seasonal Veg, Curd</p>
+                    <p><strong>Dinner:</strong> Paneer Butter Masala, Dal Tadka, Rice, Gulab Jamun</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="event-date">Oct 15, 2026</span>
+                    <h3>Inter-Hostel Sports GC</h3>
+                    <p>The annual General Championship kicks off with the Badminton and Table Tennis qualifiers. Represent your hostel!</p>
+                    <p><strong>Venue:</strong> Main Gymkhana</p>
+                </div>
+                <div class="card">
+                    <span class="event-date">Oct 22, 2026</span>
+                    <h3>Techfest Brainstorming</h3>
+                    <p>Open meeting for all students interested in volunteering or pitching ideas for the upcoming technical festival.</p>
+                    <p><strong>Venue:</strong> Hostel 12 Common Room</p>
+                </div>
+                <div class="card">
+                    <span class="event-date">Nov 05, 2026</span>
+                    <h3>Cultural Night</h3>
+                    <p>An evening of music, dance, and drama performances by the hostel cultural committee.</p>
+                    <p><strong>Venue:</strong> Open Air Theater (OAT)</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Hostel Hub. Built for the student community.</p>
+    </footer>
+
+</body>
+</html>
