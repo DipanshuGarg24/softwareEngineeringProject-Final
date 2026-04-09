@@ -75,11 +75,11 @@ def rsvp_event(eid: str, authorization: str = Header(default="")):
     return {"message": "RSVP confirmed", "rsvp_count": len(e["rsvp"]), "is_going": True}
 
 
-# @router.delete("/{eid}")
-# def delete_event(eid: str, authorization: str = Header(default="")):
-#     uid = _get_uid(authorization)
-#     e = events_data.get(eid)
-#     if not e: raise HTTPException(404, "Not found")
-#     if e["created_by"] != uid: raise HTTPException(403, "Only creator can delete")
-#     del events_data[eid]
-#     return {"message": "Deleted"}
+@router.delete("/{eid}")
+def delete_event(eid: str, authorization: str = Header(default="")):
+    uid = _get_uid(authorization)
+    e = events_data.get(eid)
+    if not e: raise HTTPException(404, "Not found")
+    if e["created_by"] != uid: raise HTTPException(403, "Only creator can delete")
+    del events_data[eid]
+    return {"message": "Deleted"}
